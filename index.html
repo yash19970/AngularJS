@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="srcp.js"></script>
+	<title>
+		angularjs
+	</title>
+</head>
+<body ng-app="myModule">
+<div ng-controller="myController">
+	Firstname: {{ emp.fname }}
+</div>
+<div ng-controller="myController">
+	lastname: {{ emp.lname }}
+</div>
+<div>
+	<div ng-controller="imgController">
+		Name: {{country.name}}
+		<img ng-src="{{ country.flag }}">
+	
+	</div>
+	
+</div>
+</body>
+</html>
