@@ -2,8 +2,8 @@
  				.module("myModule",[])
  				.controller("imgController",function($scope){
 											var country = {
-											name : "USA",
-											cap: "ees",
+											name 		: "USA",
+											cap		: "ees",
 											flag 	: "Images/usa-flag.png" 	
 										};
 											$scope.country = country;
@@ -38,5 +38,29 @@ myImg.controller("eventController",function($scope){
 	}
 	$scope.desLikes = function(techology){
 		techology.dislikes++;
+	}
+});
+
+myImg.controller("filterController",function ($scope){
+	var employees = [
+		{name: "Ben",  DOB : "1980-11-23T00",salary :"515000", gender :"Male" },
+		{name: "John", DOB : "1980-11-23T00",salary :"9955000", gender :"Male" },
+		{name: "Tony", DOB : "1980-11-23T00",salary :"955000", gender :"Male" },
+		{name: "steve",DOB : "1980-11-23T00",salary :"5825000", gender :"Male" },
+	];
+	$scope.employees = employees;
+	$scope.rowLimit = 4;
+	$scope.sortColum = "salary";
+
+	$scope.search = function(item){
+			if($scope.searchText == undefined){
+				return true;
+			}else
+			{
+						if(item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 || item.gender.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1){
+							return true;
+						}
+			}
+			return false;
 	}
 });
