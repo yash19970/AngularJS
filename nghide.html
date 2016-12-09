@@ -1,0 +1,33 @@
+<!-- contains filters in angularJS -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="srcp.js"></script>
+	<script type="text/javascript" src="Filters.js"></script>	
+	<link href="style.css" rel="stylesheet" />
+	<title> Custom Filter in Angular</title>
+</head>
+<body ng-app="myModule">
+
+<div ng-controller="customController"><p></p>
+	 <input type="checkbox" ng-model="hideSalary"/>hideSalary
+     <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th ng-hide="hideSalary">Salary (currency filter)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td> {{ employee.name}} </td>
+                    <td> {{ employee.gender}} </td>
+                    <td ng-hide="hideSalary"> {{ employee.salary | currency}} </td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+</body>
+</html>

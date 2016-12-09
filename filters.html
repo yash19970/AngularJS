@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | limitTo:rowLimit | orderBy:sortColum | filter:searchText:exactMatch ">
+                <tr ng-repeat="employee in employees | limitTo:rowLimit | orderBy:sortColum | filter:search">
                     <td> {{ employee.name | uppercase}} </td>
                     <td> {{ employee.DOB | date: "dd/MMM/yyyy"}} </td>
                     <td> {{ employee.gender }} </td>
