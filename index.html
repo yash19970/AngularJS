@@ -8,6 +8,7 @@
 	</title>
 </head>
 <body ng-app="myModule">
+
 <div ng-controller="myController">
 	Firstname: {{ emp.fname }}
 </div>
@@ -20,7 +21,49 @@
 		<img ng-src="{{ country.flag }}">
 	
 	</div>
-	
 </div>
+<br>
+<div ng-controller="arrayController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td> {{ employee.fname }}  Index - {{ $index }}</td>
+                    <td> {{ employee.lname }} </td>
+                    <td> {{ employee.salary }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div ng-controller="eventController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="technology in tech">
+                    <td> {{ technology.name }} </td>
+                    <td> {{ technology.likes }} </td>
+                    <td> {{ technology.dislikes }} </td>
+                    <td>
+                        <input type="button" ng-click="incLikes(technology)" value="Like" />
+                        <input type="button" ng-click="desLikes(technology)" value="Dislike" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
