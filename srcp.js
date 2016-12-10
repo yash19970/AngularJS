@@ -73,13 +73,12 @@ myImg.controller("customController",function ($scope){
 	];
 	$scope.employees = employees;
 });
-myImg.controller("nghideController",function ($scope){
-	var employees = [
-		{name: "Ben",  DOB : "1980-11-23T00",salary :"515000", gender :"1" },
-		{name: "John", DOB : "1980-11-23T00",salary :"9955000", gender :"1" },
-		{name: "Tony", DOB : "1980-11-23T00",salary :"955000", gender :"2" },
-		{name: "steve",DOB : "1980-11-23T00",salary :"5825000", gender :"3" },
-	];
-	$scope.employees = employees;
+myImg.controller("dataphpController",function ($scope,$http,$log){
+	$http.get('http://localhost/angularproject/index.php/Angularapi/viewall')
+		 .then(function(response){
+		 	console.log(response);
+		 	 $scope.employees = response.data;
+		 	 console.log($scope.employees);
+		 });
 	$scope.employeeView = "EmpTable.html";
 });
