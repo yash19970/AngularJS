@@ -81,5 +81,5 @@ myImg.controller("nghideController",function ($scope){
 		{name: "steve",DOB : "1980-11-23T00",salary :"5825000", gender :"3" },
 	];
 	$scope.employees = employees;
-	nghideController
+	$scope.employeeView = "EmpTable.html";
 });
