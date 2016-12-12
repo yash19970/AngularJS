@@ -19,12 +19,12 @@
 	 		<br><br>
 	 		Search: <input type="text" ng-model="searchText.name" placeholder="Search Name">
 	 		Search: <input type="text" ng-model="searchText.gender" placeholder="Search Gender">
-	 		Search: <input type="checkbox" ng-model="exactMatch"/>
+	 		Search box: <input type="checkbox" ng-model="exactMatch"/>
 	 			<!-- Exact match is case sensitive, works on main dataset. -->
 	 			
 	 			<br><br>
-	 		Search: <input type="text" ng-model="searchText" placeholder="Search Gender">
-
+<!-- 	 		Search: <input type="text" ng-model="searchText" placeholder="Search Gender">
+ -->
 	 <table>
             <thead>
                 <tr>
@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | limitTo:rowLimit | orderBy:sortColum | filter:search">
+                <tr ng-repeat="employee in employees | limitTo:rowLimit | orderBy:sortColum | filter:searchText:exactMatch">
                     <td> {{ employee.name | uppercase}} </td>
                     <td> {{ employee.DOB | date: "dd/MMM/yyyy"}} </td>
                     <td> {{ employee.gender }} </td>
