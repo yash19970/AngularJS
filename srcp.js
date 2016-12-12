@@ -73,10 +73,10 @@ myImg.controller("customController",function ($scope){
 	];
 	$scope.employees = employees;
 });
-myImg.controller("dataphpController",function ($scope,$http,$log){
+myImg.controller("dataPhpController",function ($scope,$http,$log){
 	$http.get('http://localhost/angularproject/index.php/Angularapi/viewall')
 		 .then(function(response){
-		 	console.log(response);
+		 	//console.log(response);
 		 	 $scope.employees = response.data;
 		 	 console.log($scope.employees);
 		 });
